@@ -1,0 +1,4 @@
+SOURCE = \
+clouds/baseClasses/sprayCloud/sprayCloud.C \
+$(SPRAYPARCEL)/defineBasicSprayParcel.C \
+$(SPRAYPARCEL)/makeBasicSprayParcelSubmodels.C 

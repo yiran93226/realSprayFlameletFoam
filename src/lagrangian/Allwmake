@@ -1,0 +1,7 @@
+#!/bin/sh
+wclean intermediate
+wclean turbulence
+wclean spray
+wmake intermediate
+wmake turbulence
+wmake spray

@@ -1,0 +1,10 @@
+$(OBJECTS_DIR)/FlameletLib.C.dep: \
+FlameletLib.C \
+FlameletLib.h \
+InvDistWeighted.h \
+Table.h \
+
+FlameletLib.h :
+InvDistWeighted.h :
+Table.h :
+

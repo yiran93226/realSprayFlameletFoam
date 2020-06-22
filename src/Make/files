@@ -1,0 +1,3 @@
+realSprayFlameletFoam.C
+
+EXE = $(FOAM_USER_APPBIN)/realSprayFlameletFoam

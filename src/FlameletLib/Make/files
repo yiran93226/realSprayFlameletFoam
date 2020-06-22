@@ -1,0 +1,5 @@
+FlameletLib.C
+InvDistWeighted.C
+Table.C
+
+LIB = $(FOAM_USER_LIBBIN)/libFlameletLib

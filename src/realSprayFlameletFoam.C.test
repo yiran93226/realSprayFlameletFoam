@@ -1,0 +1,57 @@
+/*---------------------------------------------------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Copyright (C) 2011-2018 OpenFOAM Foundation
+     \\/     M anipulation  |
+-------------------------------------------------------------------------------
+License
+    This file is part of OpenFOAM.
+
+    OpenFOAM is free software: you can redistribute it and/or modify it
+    under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    OpenFOAM is distributed in the hope that it will be useful, but WITHOUT
+    ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+    FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
+    for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with OpenFOAM.  If not, see <http://www.gnu.org/licenses/>.
+
+Application
+    sprayFlameletFoam
+
+Description
+    Modeling spray combustion using the flamelet approach.
+
+\*---------------------------------------------------------------------------*/
+
+#include "fvCFD.H"
+#include "turbulentFluidThermoModel.H"
+#include "basicSprayCloud.H"
+#include "psiReactionThermo.H"
+// #include "CombustionModel.H"
+#include "radiationModel.H"
+#include "SLGThermo.H"
+#include "pimpleControl.H"
+#include "fvOptions.H"
+
+#include "FlameletLib.h"
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+int main(int argc, char *argv[])
+{
+    //Info<< "Reading flamelet tables" << endl;
+    FlameletLib flameletTable("RAS");
+    Info<< "Reading flamelet tables" << endl;
+    flameletTable.find(0.140047, 0.03, 0.8, -713615);
+    Info<< "Find Z0.1 TEMPERATURE: " << flameletTable.lookupT() << endl;
+    return 0;
+}
+
+
+// ************************************************************************* //
